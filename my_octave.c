@@ -56,8 +56,8 @@ int main(void)
 		if (cmd == F) q = del_matrix(q, qk, &qz, ql, qc, k);
 		if (cmd == S) {
 			if (validate_size(lx, cx, ql, qc) != 0) {
-					l = ql[cx]; a = init_alloc_matrix(l, l, -1);
-					strassen_multiply(q[lx], q[cx], a, l);
+					l = ql[cx]; 
+					a = strassen_multiply(q[lx], q[cx], l);
 					q = add_matrix(q, &qz, &qk, ql, qc, a, l, l); 
 					free_matrix(a, l);
 				}
